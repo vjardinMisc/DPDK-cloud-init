@@ -1,0 +1,26 @@
+#cloud-config
+# vim: syntax=yaml
+#
+# Required packages in order to compile source code from dpdk.org
+# and in order to build the packages (RPM) since the DPDK 1.6.0r2.
+#
+# Once they are installed, I am using
+#  wget http://dpdk.org/browse/dpdk/snapshot/dpdk-1.6.0r2.tar.gz
+#  wget http://dpdk.org/browse/memnic/snapshot/memnic-1.1.tar.gz
+#  wget http://dpdk.org/browse/virtio-net-pmd/snapshot/virtio-net-pmd-1.2.tar.gz
+#  wget http://dpdk.org/browse/vmxnet3-usermap/snapshot/vmxnet3-usermap-1.2.tar.gz
+#
+#  RPM_BUILD_NCPUS=8 rpmbuild -ta dpdk-1.6.0r2.tar.gz
+#  sudo rpm -ivh ~/rpmbuild/RPMS/x86_64/dpdk*.rpm
+#
+#  RPM_BUILD_NCPUS=8 rpmbuild -ta memnic-1.1.tar.gz
+#  RPM_BUILD_NCPUS=8 rpmbuild -ta virtio-net-pmd-1.2.tar.gz
+#  RPM_BUILD_NCPUS=8 rpmbuild -ta vmxnet3-usermap-1.2.tar.gz
+#
+#  Or you can run some git clones.
+packages:
+ - gcc
+ - doxygen
+ - rpm-build
+ - kernel-devel
+ - git
