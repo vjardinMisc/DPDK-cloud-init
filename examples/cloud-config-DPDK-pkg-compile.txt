@@ -24,3 +24,5 @@ packages:
  - rpm-build
  - kernel-devel
  - git
+ - libpcap
+ - libpcap-devel
